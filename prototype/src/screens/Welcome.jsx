@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function Welcome({ onNavigate }) {
   return (
-    <div className="flex-1 flex flex-col justify-center items-center bg-emerald-600 text-white p-8 h-full relative overflow-hidden">
+    <div className="flex-1 flex flex-col justify-center items-center bg-emerald-600 text-white p-8 h-full relative overflow-hidden ">
       {/* Background Decor */}
       <div className="absolute -top-24 -right-24 w-64 h-64 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
       <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-emerald-700 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
@@ -28,7 +28,7 @@ export default function Welcome({ onNavigate }) {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="w-full space-y-4 relative z-10"
+        className="w-full max-w-sm mx-auto space-y-4 relative z-10"
       >
         <button 
           onClick={() => onNavigate('home')}
@@ -53,8 +53,9 @@ export default function Welcome({ onNavigate }) {
         className="mt-12 flex items-center gap-2 text-sm text-emerald-200 font-medium bg-emerald-800/30 px-4 py-2 rounded-full border border-emerald-700/50"
       >
         <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-        Verified IIT Campus Network
+        Verified IIT Madras Network
       </motion.p>
     </div>
   );
 }
+

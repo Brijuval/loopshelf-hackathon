@@ -78,7 +78,7 @@ export default function ListItem({ onNavigate }) {
   const calculatedDeposit = itemPrice ? Math.round(Number(itemPrice) * 0.15) : 100;
 
   return (
-    <div className="flex-1 bg-white flex flex-col h-full overflow-hidden">
+    <div className="flex-1 bg-white flex flex-col h-full overflow-hidden md:max-w-2xl md:mx-auto md:w-full md:border-x border-slate-200 md:shadow-2xl relative">
       <div className="p-4 pt-10 flex justify-between items-center border-b border-slate-100 relative z-10 bg-white">
         <button onClick={() => onNavigate('back')} className="p-2 text-slate-400 hover:text-slate-600 rounded-full transition-colors bg-slate-50">
           <X className="w-5 h-5" />

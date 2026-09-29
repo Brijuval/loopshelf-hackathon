@@ -8,7 +8,7 @@ export default function ItemDetails({ item, onNavigate }) {
   const safeItem = item || items[0];
 
   return (
-    <div className="flex-1 bg-slate-50 flex flex-col h-full overflow-hidden">
+    <div className="flex-1 bg-slate-50 flex flex-col h-full overflow-hidden md:max-w-2xl md:mx-auto md:w-full md:border-x border-slate-200 md:shadow-2xl relative">
       {/* Hero Image Area */}
       <div className="bg-slate-900 pt-12 pb-20 px-6 relative shrink-0">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900/50 pointer-events-none z-0"></div>
@@ -124,10 +124,50 @@ export default function ItemDetails({ item, onNavigate }) {
             <p className="font-bold text-slate-800 mt-1">₹{safeItem.deposit} (Refundable)</p>
           </div>
         </div>
+
+        {/* Reviews Section */}
+        <div className="mt-8 mb-4">
+          <h3 className="text-lg font-black text-slate-800 mb-4 flex items-center gap-2">
+            Community Reviews 
+            <span className="bg-slate-100 text-slate-500 text-[10px] px-2 py-1 rounded-full uppercase tracking-wider">2</span>
+          </h3>
+          <div className="space-y-3">
+            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex text-amber-400">
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                </div>
+                <span className="text-xs font-bold text-slate-400">3 days ago</span>
+              </div>
+              <p className="text-sm text-slate-600 font-medium">"Worked perfectly for my presentation. Super easy pickup right outside the hostel."</p>
+              <p className="text-xs font-bold text-slate-800 mt-2">— Karan (Borrowed 3 hrs)</p>
+            </div>
+            
+            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex text-amber-400">
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                  <Star className="w-3.5 h-3.5 text-slate-200 fill-current" />
+                </div>
+                <span className="text-xs font-bold text-slate-400">1 week ago</span>
+              </div>
+              <p className="text-sm text-slate-600 font-medium">"Item is exactly as described. Only taking off one star because I couldn't find the room initially."</p>
+              <p className="text-xs font-bold text-slate-800 mt-2">— Priya (Borrowed 1 day)</p>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       {/* Floating Action */}
-      <div className="absolute bottom-0 w-full max-w-md bg-white/90 backdrop-blur-md border-t border-slate-100 p-4 pb-6 px-6 z-50 shadow-[0_-10px_30px_-15px_rgba(0,0,0,0.15)]">
+      <div className="absolute bottom-0 w-full bg-white/90 backdrop-blur-md border-t border-slate-100 p-4 pb-6 px-6 z-50 shadow-[0_-10px_30px_-15px_rgba(0,0,0,0.15)]">
         <motion.button 
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}

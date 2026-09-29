@@ -23,7 +23,7 @@ export default function BorrowPass({ item, onNavigate }) {
   };
 
   return (
-    <div className="flex-1 bg-slate-900 p-6 pt-12 flex flex-col h-full overflow-hidden relative">
+    <div className="flex-1 bg-slate-900 p-6 pt-12 flex flex-col h-full overflow-hidden relative md:max-w-2xl md:mx-auto md:w-full md:border-x border-slate-700 md:shadow-2xl">
       <div className="flex justify-between items-center mb-6 relative z-10">
         <button onClick={() => onNavigate('back')} className="text-slate-400 p-2 hover:bg-slate-800 rounded-full transition-colors">
           <X className="w-6 h-6" />

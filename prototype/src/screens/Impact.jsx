@@ -26,7 +26,7 @@ export default function Impact({ onNavigate }) {
   };
 
   return (
-    <div className="flex-1 bg-emerald-600 flex flex-col h-full overflow-hidden relative">
+    <div className="flex-1 bg-emerald-600 flex flex-col h-full overflow-hidden relative w-full">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-400 via-emerald-600 to-emerald-800 opacity-60"></div>
       
       <div className="p-6 pt-12 flex justify-between items-center text-white relative z-10">

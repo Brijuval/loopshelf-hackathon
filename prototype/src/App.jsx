@@ -10,6 +10,7 @@ import MapScreen from './screens/Map';
 import ProfileScreen from './screens/Profile';
 import ListItemScreen from './screens/ListItem';
 import ForecastScreen from './screens/Forecast';
+import OwnerRequestsScreen from './screens/OwnerRequests';
 import { Home, Leaf, Map as MapIcon, User, PlusCircle } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -19,6 +20,7 @@ export default function App() {
   const [selectedItem, setSelectedItem] = useState(null);
   const [searchFilter, setSearchFilter] = useState('');
   const [history, setHistory] = useState(['splash']);
+  const [requestStatus, setRequestStatus] = useState('none');
 
   const navigate = (screen) => {
     if (screen === 'back') {
@@ -51,8 +53,17 @@ export default function App() {
   ];
 
   return (
-    <div className="w-full max-w-md mx-auto bg-slate-50 h-full shadow-2xl relative overflow-hidden flex flex-col font-sans">
-      <AnimatePresence mode="wait">
+    <div className="w-full h-screen bg-slate-50 relative overflow-hidden flex flex-col font-sans">
+      <div className={`flex-1 relative w-full h-full ${['home', 'map', 'impact', 'profile'].includes(currentScreen) ? 'md:pl-20' : ''}`}><AnimatePresence mode="wait">
+        {currentScreen === 'owner_requests' && (
+          <motion.div key="owner_requests" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 20 }} className="flex-1 flex flex-col h-full w-full bg-slate-50 z-50 absolute inset-0 md:pl-20">
+            <OwnerRequestsScreen 
+              onNavigate={navigate} 
+              requestStatus={requestStatus} 
+              setRequestStatus={setRequestStatus} 
+            />
+          </motion.div>
+        )}
         {currentScreen === 'splash' && (
           <motion.div key="splash" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex-1 flex flex-col h-full absolute inset-0 z-50">
             <SplashScreen onNavigate={navigate} />
@@ -135,11 +146,11 @@ export default function App() {
             />
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence></div>
 
-      {/* Bottom Navigation for Prototype */}
+      {/* Responsive Navigation */}
       {['home', 'map', 'impact', 'profile'].includes(currentScreen) && (
-        <div className="absolute bottom-0 w-full max-w-md bg-white/90 backdrop-blur-md border-t border-slate-200 flex justify-around items-center p-2 pb-6 z-40 shadow-[0_-8px_15px_-3px_rgba(0,0,0,0.05)]">
+        <div className="absolute md:fixed bottom-0 md:top-0 left-0 w-full md:w-20 md:h-screen bg-white/90 md:bg-white backdrop-blur-md md:backdrop-blur-none border-t md:border-t-0 md:border-r border-slate-200 flex md:flex-col justify-around md:justify-start items-center p-2 pb-6 md:pt-8 md:pb-4 z-40 shadow-[0_-8px_15px_-3px_rgba(0,0,0,0.05)] md:shadow-[8px_0_15px_-3px_rgba(0,0,0,0.05)] gap-0 md:gap-6">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentScreen === item.id;
@@ -160,7 +171,7 @@ export default function App() {
           {/* Floating Action Button inside Nav */}
           <button 
             onClick={() => navigate('list_item')}
-            className="absolute -top-6 left-1/2 -translate-x-1/2 bg-emerald-600 text-white p-3 rounded-full shadow-lg shadow-emerald-500/30 hover:bg-emerald-700 transition-colors hover:-translate-y-1"
+            className="absolute -top-6 md:top-auto md:relative md:-top-0 md:mt-4 left-1/2 md:left-auto -translate-x-1/2 md:translate-x-0 bg-emerald-600 text-white p-3 rounded-full shadow-lg shadow-emerald-500/30 hover:bg-emerald-700 transition-colors hover:-translate-y-1"
           >
             <PlusCircle className="w-7 h-7" />
           </button>

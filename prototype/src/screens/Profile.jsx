@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function Profile({ onNavigate }) {
   return (
-    <div className="flex-1 bg-slate-50 flex flex-col h-full overflow-y-auto pb-24">
+    <div className="flex-1 bg-slate-50 flex flex-col h-full overflow-y-auto pb-24 w-full">
       {/* Header Profile Section */}
       <div className="bg-white pt-16 pb-8 px-6 rounded-b-3xl shadow-sm border-b border-slate-100">
         <div className="flex justify-between items-start mb-6">
@@ -96,6 +96,22 @@ export default function Profile({ onNavigate }) {
               <Archive className="w-5 h-5" />
             </div>
             <span className="font-bold text-slate-700">My Listings (3)</span>
+          </div>
+          <ChevronRight className="w-5 h-5 text-slate-400" />
+        </motion.button>
+
+        <motion.button 
+          onClick={() => onNavigate('owner_requests')} 
+          initial={{ x: -20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="w-full bg-indigo-900 text-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-between hover:bg-indigo-800 transition-colors group"
+        >
+          <div className="flex items-center gap-3">
+            <div className="bg-white/20 p-2 rounded-lg">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <span className="font-bold">Demo: Owner Requests (1 Pending)</span>
           </div>
           <ChevronRight className="w-5 h-5 text-slate-400" />
         </motion.button>

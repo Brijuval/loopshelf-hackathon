@@ -11,7 +11,7 @@ export default function Splash({ onNavigate }) {
   }, [onNavigate]);
 
   return (
-    <div className="flex-1 flex flex-col justify-center items-center bg-emerald-600 text-white p-8 h-full relative overflow-hidden z-50">
+    <div className="flex-1 flex flex-col justify-center items-center bg-emerald-600 text-white p-8 h-full relative overflow-hidden z-50 ">
       {/* Background Decor */}
       <div className="absolute -top-24 -right-24 w-64 h-64 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-pulse"></div>
       <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-emerald-700 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-pulse" style={{ animationDelay: '1s' }}></div>

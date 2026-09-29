@@ -4,7 +4,8 @@ export const items = [
     name: 'Arduino Uno Kit', 
     category: 'Electronics',
     distance: '280m', 
-    location: 'Hostel 7, Room 214',
+    location: 'Mandakini Hostel, Room 214',
+    coords: [12.9865, 80.2333],
     time: 'Available today', 
     duration: '2 days',
     owner: 'Aditi', 
@@ -13,7 +14,7 @@ export const items = [
     price: 600,
     deposit: 50,
     emoji: '🔌',
-    imageUrl: 'https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&q=80&w=400',
+    imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=400',
     status: 'available',
     isVerified: true,
     contact: '+91 9876543210'
@@ -23,7 +24,8 @@ export const items = [
     name: 'Camera Tripod', 
     category: 'Media',
     distance: '500m', 
-    location: 'Central Library',
+    location: 'Central Library, IITM',
+    coords: [12.9913, 80.2319],
     time: 'Available for 6 hours', 
     duration: '1 day',
     owner: 'Rahul', 
@@ -32,7 +34,7 @@ export const items = [
     price: 800,
     deposit: 100,
     emoji: '📸',
-    imageUrl: 'https://images.unsplash.com/photo-1510260408139-44031637841c?auto=format&fit=crop&q=80&w=400',
+    imageUrl: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=400',
     status: 'available',
     isVerified: true,
     contact: '+91 9876543211'
@@ -42,7 +44,8 @@ export const items = [
     name: 'Lab Coat (Size M)', 
     category: 'Lab Gear',
     distance: '1.2km', 
-    location: 'Chemistry Block',
+    location: 'Department of Chemistry',
+    coords: [12.9902, 80.2307],
     time: 'Available all week', 
     duration: '5 days',
     owner: 'Priya', 
@@ -51,7 +54,7 @@ export const items = [
     price: 400,
     deposit: 50,
     emoji: '🥼',
-    imageUrl: 'https://images.unsplash.com/photo-1582719202047-9ac6a1ab4270?auto=format&fit=crop&q=80&w=400',
+    imageUrl: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=400',
     status: 'available',
     isVerified: true,
     contact: '+91 9876543212'
@@ -61,7 +64,8 @@ export const items = [
     name: 'Scientific Calculator', 
     category: 'Study',
     distance: '100m', 
-    location: 'Hostel 4, Block B',
+    location: 'Narmada Hostel',
+    coords: [12.9868, 80.2355],
     time: 'Available now', 
     duration: '3 days',
     owner: 'Karan', 
@@ -80,7 +84,8 @@ export const items = [
     name: 'HDMI Cable (2m)', 
     category: 'Electronics',
     distance: '800m', 
-    location: 'Tech Hub',
+    location: 'Research Park (IITMRP)',
+    coords: [12.9950, 80.2425],
     time: 'Available tomorrow', 
     duration: '1 day',
     owner: 'Sneha', 
@@ -89,7 +94,7 @@ export const items = [
     price: 150,
     deposit: 0,
     emoji: '📺',
-    imageUrl: 'https://images.unsplash.com/photo-1544414603-9d9361a3575f?auto=format&fit=crop&q=80&w=400',
+    imageUrl: 'https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&q=80&w=400',
     status: 'available',
     isVerified: true,
     contact: '+91 9876543214'
@@ -123,7 +128,8 @@ export const requests = [
     urgency: 'Needed by tomorrow',
     requester: 'Rahul',
     requesterInitials: 'R',
-    location: 'Central Library',
+    location: 'Central Library, IITM',
+    coords: [12.9913, 80.2319],
     bounty: 50,
     emoji: '🧮',
     status: 'open',
@@ -136,7 +142,7 @@ export const requests = [
     urgency: 'Needed for hackathon',
     requester: 'Anjali',
     requesterInitials: 'A',
-    location: 'Tech Hub',
+    location: 'Research Park (IITMRP)',
     bounty: 0,
     emoji: '🔌',
     status: 'open',
@@ -158,7 +164,7 @@ export const forecasts = [
   {
     id: 'f2',
     title: 'Arduino Kits',
-    reason: 'Weekend Hackathon at Tech Hub',
+    reason: 'Weekend Hackathon at Research Park (IITMRP)',
     trend: '+150%',
     emoji: '🔌',
     category: 'Electronics',
@@ -176,3 +182,7 @@ export const forecasts = [
     bountyEstimate: '₹10-20/day'
   }
 ];
+
+
+
+

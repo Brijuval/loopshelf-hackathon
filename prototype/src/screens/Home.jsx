@@ -16,7 +16,7 @@ export default function Home({ onNavigate, onSearch, onFilter, onSelectItem }) {
   const categories = ['All', 'Electronics', 'Lab Gear', 'Study', 'Media'];
 
   return (
-    <div className="flex-1 bg-slate-50 flex flex-col pb-24 overflow-y-auto">
+    <div className="flex-1 bg-slate-50 flex flex-col pb-24 overflow-y-auto w-full">
       {/* Header */}
       <div className="bg-white p-6 pt-10 rounded-b-3xl shadow-sm border-b border-slate-100 z-10 relative">
         <div className="flex justify-between items-center">
@@ -24,7 +24,7 @@ export default function Home({ onNavigate, onSearch, onFilter, onSelectItem }) {
             <h2 className="text-2xl font-black text-slate-800">Good afternoon 👋</h2>
             <div className="flex items-center gap-1 mt-1 text-emerald-600 font-medium text-sm bg-emerald-50 w-max px-2 py-1 rounded-md">
               <MapPin className="w-3.5 h-3.5" />
-              <span>Hostel 7, IIT Campus</span>
+              <span>Mandakini Hostel, IIT Madras</span>
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -144,7 +144,7 @@ export default function Home({ onNavigate, onSearch, onFilter, onSelectItem }) {
           </button>
         </div>
         
-        <div className="space-y-4">
+        <div className="flex flex-col md:grid md:grid-cols-2 xl:grid-cols-3 gap-4">
           <AnimatePresence mode="popLayout">
             {activeTab === 'available' ? (
               items.map((item, idx) => (
@@ -230,3 +230,4 @@ export default function Home({ onNavigate, onSearch, onFilter, onSelectItem }) {
     </div>
   );
 }
+

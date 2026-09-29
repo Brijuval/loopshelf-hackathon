@@ -15,7 +15,7 @@ export default function Search({ initialQuery, initialFilter, onNavigate, onSele
   const categories = ['All', 'Electronics', 'Lab Gear', 'Study', 'Media', 'Sports'];
 
   return (
-    <div className="flex-1 bg-slate-50 flex flex-col h-full overflow-hidden">
+    <div className="flex-1 bg-slate-50 flex flex-col h-full overflow-hidden w-full">
       {/* Header & Search Bar */}
       <div className="bg-white p-4 pt-10 shadow-sm border-b border-slate-100 z-10">
         <div className="flex items-center gap-3">
@@ -61,7 +61,7 @@ export default function Search({ initialQuery, initialFilter, onNavigate, onSele
         
         <AnimatePresence mode="popLayout">
           {results.length > 0 ? (
-            <div className="space-y-4">
+            <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {results.map((item, idx) => (
                 <motion.div 
                   layout
